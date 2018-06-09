@@ -448,8 +448,18 @@ Loc::loadMessages(__FILE__);?>
 							);?>
 						</div>
 						<div class="workarea">
+							<?$APPLICATION->IncludeComponent("bitrix:main.include", "",
+								array(
+									"AREA_FILE_SHOW" => "file",
+									"PATH" => SITE_DIR."include/slider.php",
+									"AREA_FILE_RECURSIVE" => "N",
+									"EDIT_MODE" => "html",
+								),
+								false,
+								array("HIDE_ICONS" => "Y")
+							);?>
 							<?if($APPLICATION->GetCurPage(true)== SITE_DIR."index.php"):
-								if(in_array("SLIDER", $arSetting["HOME_PAGE"]["VALUE"])):?>
+								/*if(in_array("SLIDER", $arSetting["HOME_PAGE"]["VALUE"])):?>
 									<?$APPLICATION->IncludeComponent("bitrix:main.include", "",
 										array(
 											"AREA_FILE_SHOW" => "file",
@@ -460,7 +470,7 @@ Loc::loadMessages(__FILE__);?>
 										false,
 										array("HIDE_ICONS" => "Y")
 									);?>
-								<?endif;
+								<?endif;*/
 								if(in_array("ADVANTAGES", $arSetting["HOME_PAGE"]["VALUE"])):
 									global $arAdvFilter;
 									$arAdvFilter = array(
